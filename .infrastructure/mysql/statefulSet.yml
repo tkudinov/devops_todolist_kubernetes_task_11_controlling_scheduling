@@ -60,6 +60,11 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 2
           timeoutSeconds: 1
+      tolerations:
+        - key: "mysql"
+          operator: "Equal"
+          value: "todoapp"
+          effect: "NoSchedule"
       affinity:
         nodeAntiAffinity:
           preferedDuringSchedulingIgnoredDuringExecution:
